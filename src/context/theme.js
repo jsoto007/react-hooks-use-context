@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import ThemedButton from '../components/ThemedButton';
-import { UserContext, UserProvider } from './user';
 
-const UserTheme = React.createContext();
+const ThemeContext = React.createContext(); 
 
-function ThemeProvider({ children }) {
+function ThemeProvider ({ children }) {
+
+function ThemeContext({ children }) {
     const [theme, setTheme] = useState("dark");
     return (
-        <UserTheme.provider value={{ theme, setTheme }} >{children}</UserTheme.provider>
+        <ThemeContext.provider value={{ theme, setTheme }}>
+            {children}
+        </ThemeContext.provider>
     )
-
+}
 }
 
-export { UserTheme, ThemeProvider };
+export { ThemeContext, ThemeProvider };
