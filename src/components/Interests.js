@@ -1,9 +1,10 @@
+
+
 import React, { useContext } from "react";
-import { UserContext } from "../context/user"
+import { ThemeContext } from "../context/theme";
 
 function Interests({ interests }) {
-
-const { theme } = useContext(UserContext)
+  const { theme } = useContext(ThemeContext);
   return (
     <div>
       <h4>Interests</h4>
